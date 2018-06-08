@@ -1,3 +1,9 @@
 cmake-build-debug/
+etcd-cpp-api.cbp
+libetcd-cpp-api.so
+*.cmake
+CMakeFiles/
+CMakeCache.txt
+Makefile
 *.swp
 .idea/
