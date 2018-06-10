@@ -1,4 +1,3 @@
-#include <grpc/support/log.h>
 #include "etcd/v3/Action.hpp"
 
 etcdv3::Action::Action(etcdv3::ActionParameters params)
@@ -24,6 +23,7 @@ void etcdv3::Action::waitForResponse()
   bool ok = false;    
 
   cq_.Next(&got_tag, &ok);
-  GPR_ASSERT(got_tag == (void*)this);
+  if(got_tag != (void*)this)
+	  throw std::runtime_error("Assertion error: `got_tag == (void*)this`");
 }
 

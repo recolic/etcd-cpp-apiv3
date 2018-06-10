@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
 
+include_directories(../include)
+link_directories(/usr/local/lib)
 add_executable(etcd_test catch.hpp EtcdTest.cpp EtcdSyncTest.cpp WatcherTest.cpp)
 set_property(TARGET etcd_test PROPERTY CXX_STANDARD 11)
 
