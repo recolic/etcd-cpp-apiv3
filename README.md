@@ -1,5 +1,31 @@
 etcd-cpp-api is a C++ API for [etcd]
 
+## Current debug status:
+
+```
+recolickeghart@mail ~/_/tst> ./etcd_test                                                                 
+E0610 09:39:57.226751524    7349 channel_cc.cc:131]          assertion failed: GRPC_CALL_OK == grpc_call_
+start_batch(call->call(), cops, nops, ops, nullptr)                                                      
+                                                                                                         
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                          
+etcd_test is a Catch v1.5.4 host application.                                                            
+Run with -? for options                                                                                  
+                                                                                                         
+-------------------------------------------------------------------------------                          
+wait for a value change                                                                                  
+-------------------------------------------------------------------------------                          
+/home/recolickeghart/etcd-cpp-apiv3/tst/EtcdTest.cpp:277                                                 
+...............................................................................                          
+                                                                                                         
+/home/recolickeghart/etcd-cpp-apiv3/tst/EtcdTest.cpp:277: FAILED:                                        
+due to a fatal error condition:                                                                          
+  SIGABRT - Abort (abnormal termination) signal                                                          
+                                                                                                         
+===============================================================================                          
+test cases:  14 |  13 passed | 1 failed                                                                  
+assertions: 108 | 107 passed | 1 failed                                                                  
+```
+
 ## Requirements
 1. Build Boost Library(http://www.boost.org/doc/libs/1_61_0/more/getting_started/unix-variants.html)
     * You can use: 
@@ -349,4 +375,5 @@ Watch stream will be cancelled either by user implicitly calling Cancel() or whe
 ### TODO
 1. Cancellation of asynchronous calls(except for watch)
 2. LeaseKeepAlive
+
 
